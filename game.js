@@ -61,9 +61,11 @@ animatePress = (currentColour)=>{
 
 
 $(document).keypress(function () {
+  if (!started) {
+    $("#level-title").text("Level " + level);
     nextSequence();
-   
-    $("#level-title").text("Level "+level);
+    started = true;
+  }
 })
 
 playSound = (name) =>{
